@@ -7,6 +7,6 @@ abstract class AppController extends Controller {
 	}
 	
 	public function beforeRender(){
-	//	$this->debug->log('Pase por '.get_class($this).'<br>','Route',true);
+		
 	}
 }
