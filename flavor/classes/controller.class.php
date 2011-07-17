@@ -118,5 +118,27 @@ abstract class controller {
 		return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']=="XMLHttpRequest");
 	} 
 	
+	/**
+	* Magic method to load action helpers and run its init method
+	* @param String $helper The helper to run
+	* @param Array $args Array of arguments to the method
+	* @return Unknown What returned the $method
+	*/
+	public function __call($helper, $args){
+		$helper = new $helper();
+		return call_user_func_array(array($helper, 'init'),$args);
+	}
+	
+	/**
+	* To call another method beside of 'init' of a helper
+	* @param String $helper The name of the helper
+	* @param String $method The method to run
+	* @param Array $args Array of arguments to the method
+	* @return Unknown What returned $helper->$method($args)
+	*/
+	public function callHelper($helper, $method){
+		$helper = new $helper();
+		return call_user_func_array(array($helper, $method),array_slice($func_get_args(),2));
+	}
 }
 ?>
