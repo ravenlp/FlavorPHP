@@ -36,6 +36,7 @@ function __autoload($className) {
 		Absolute2Flavor.'flavor'.DIRSEP.'helpers'.DIRSEP.$className.'.helper.php', // maybe we want a helper
 		Absolute_Path.APPDIR.DIRSEP.$className.'.php', // maybe we want appcontroller or appviews
 		Absolute_Path.APPDIR.DIRSEP."controllers".DIRSEP.$className.'.php', // maybe we want a controller
+		Absolute_Path.APPDIR.DIRSEP."controllers".DIRSEP.'helpers'.DIRSEP.$className.'.php' // controller helpers
 		Absolute_Path.APPDIR.DIRSEP.'models'.DIRSEP.$className.'.php', // maybe we want a model
 		Absolute_Path.APPDIR.DIRSEP.'libs'.DIRSEP.$className.'.class.php' // maybe we want a third party class
 		// If you need more directories just add them here
