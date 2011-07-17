@@ -133,6 +133,10 @@ abstract class controller {
 	* To call another method beside of 'init' of a helper
 	* @param String $helper The name of the helper
 	* @param String $method The method to run
+<<<<<<< HEAD
+=======
+	* @param Array $args Array of arguments to the method
+>>>>>>> 23a2fb296566f6c76d123fdee48bf55cd155b9c3
 	* @return Unknown What returned $helper->$method($args)
 	*/
 	public function callHelper($helper, $method){
